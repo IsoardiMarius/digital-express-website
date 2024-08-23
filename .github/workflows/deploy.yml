@@ -17,11 +17,9 @@ jobs:
         run: |
           npm install
           npm run build
-          touch build/.nojekyll
-          cp build/404.html build/index.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
-          branch: gh-pages
+          branch: main # The branch the action should deploy to.
