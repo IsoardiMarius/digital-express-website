@@ -1,33 +1,17 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-const base = '/digital-express-website';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
+	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null,
-			precompress: false,
-			strict: true,
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? base : ''
-		},
-		prerender: {
-			handleHttpError: ({ status, path, referrer, referenceType }) => {
-				if (status === 404) {
-					return;  // Ignorer les erreurs 404 et continuer
-				}
-				throw new Error(`Failed to prerender ${path}: ${status}`);
-			},
-			crawl: true,  // Ajoute cette option pour que SvelteKit explore les routes
-			entries: [`${base}/`]  // Préfixez l'entrée avec la base
-		}
+		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
+		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
+		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
+		adapter: adapter()
 	}
 };
 
