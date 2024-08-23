@@ -7,15 +7,15 @@
 			label: 'Product',
 			items: [
 				{
-					href: '/',
+					href: '#',
 					name: 'Email Collection'
 				},
 				{
-					href: '/pricing',
+					href: '#',
 					name: 'Pricing'
 				},
 				{
-					href: '/faq',
+					href: '#',
 					name: 'FAQ'
 				}
 			]
@@ -25,11 +25,11 @@
 			label: 'Community',
 			items: [
 				{
-					href: '/',
+					href: '#',
 					name: 'Discord'
 				},
 				{
-					href: '/',
+					href: '#',
 					name: 'Twitter'
 				},
 				{
@@ -42,12 +42,12 @@
 			label: 'Legal',
 			items: [
 				{
-					href: '/terms',
+					href: '#',
 					name: 'Terms'
 				},
 
 				{
-					href: '/privacy',
+					href: '#',
 					name: 'Privacy'
 				}
 			]
@@ -56,12 +56,12 @@
 
 	const footerSocials = [
 		{
-			href: '',
+			href: '#',
 			name: 'Discord',
 			icon: DiscordSvg
 		},
 		{
-			href: '',
+			href: '#',
 			name: 'Twitter',
 			icon: TwitterSvg
 		}
